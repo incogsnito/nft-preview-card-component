@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root{
+  --icon: url("./nft-preview-card-component-main/nft-preview-card-component-main/images/icon-view.svg")
+}
+
 @font-face{
   font-family: "Outfit";
   src: url("./Outfit/Outfit-VariableFont_wght.ttf") format("truetype");
@@ -37,6 +41,34 @@ b{
   margin: 0 auto;
 }
 
+.img{
+  position: relative; /* set parents position to relative to prevent all child elements from leaking out when position is set to absolute */
+}
+
+.container__img{
+  border-radius: 10px;
+}
+
+.img::before{ /* pseudo class to prevent interferance with img container */
+  content: var(--icon);
+  position: absolute;  /* used to center position */
+  inset: 0; /* short hand for positioning */
+  opacity: 0; 
+
+  display:grid;
+  place-content: center;
+  transition: all 0.25s ease-in-out;
+  
+}
+
+.img:hover::before {
+  opacity: 1;
+  background: rgba(0, 255, 255, 0.5);
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+
 p{
   font-size: 1.2rem;
   color: hsl(215, 51%, 70%);
@@ -64,10 +96,6 @@ p{
 }
 
 
-
-.container__img{
-  border-radius: 10px;
-}
 
 img{
   max-width: 100%;
