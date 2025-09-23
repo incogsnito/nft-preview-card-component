@@ -118,6 +118,7 @@ span{
   transition: all 0.25s ease-in-out;
 }
 
-h2, span:hover{
+h2:hover, span:hover{
   color: cyan;
+  cursor: pointer;
 }
