@@ -29,11 +29,13 @@ h2{
 
 .container{
   background: hsl(216, 50%, 16%);
-  width: 25rem;
+  width: 100%;
+  max-width: 400px;
   font-family: "Outfit", sans-serif;
   padding: 1em 0;
   border-radius: 10px;
   color: white;
+  outline: 20px solid hsla(215, 51%, 16%, 0.13);
 }
 
 b{
@@ -46,7 +48,8 @@ b{
 }
 
 .img{
-  position: relative; /* set parents position to relative to prevent all child elements from leaking out when position is set to absolute */
+  position: relative;  /* set parents position to relative to prevent all child elements from leaking out when position is set to absolute */
+  overflow: hidden;
 }
 
 .container__img{
